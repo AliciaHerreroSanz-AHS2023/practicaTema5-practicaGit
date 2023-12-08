@@ -29,16 +29,19 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTelegrama = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.rOrdinario = new System.Windows.Forms.RadioButton();
+            this.rUrgente = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(529, 311);
+            this.button1.Location = new System.Drawing.Point(504, 435);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 62);
             this.button1.TabIndex = 0;
@@ -46,13 +49,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtTelegrama
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 74);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(529, 149);
-            this.textBox1.TabIndex = 1;
+            this.txtTelegrama.Location = new System.Drawing.Point(126, 74);
+            this.txtTelegrama.Multiline = true;
+            this.txtTelegrama.Name = "txtTelegrama";
+            this.txtTelegrama.Size = new System.Drawing.Size(529, 149);
+            this.txtTelegrama.TabIndex = 1;
             // 
             // label1
             // 
@@ -66,42 +69,68 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(122, 347);
+            this.label3.Location = new System.Drawing.Point(97, 471);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Coste";
             // 
-            // textBox2
+            // txtPrecio
             // 
-            this.textBox2.Location = new System.Drawing.Point(202, 347);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 26);
-            this.textBox2.TabIndex = 5;
+            this.txtPrecio.Location = new System.Drawing.Point(177, 471);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(212, 26);
+            this.txtPrecio.TabIndex = 5;
             // 
-            // checkBox1
+            // rOrdinario
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(126, 250);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 24);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Urgente ?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.rOrdinario.AutoSize = true;
+            this.rOrdinario.Location = new System.Drawing.Point(33, 45);
+            this.rOrdinario.Name = "rOrdinario";
+            this.rOrdinario.Size = new System.Drawing.Size(98, 24);
+            this.rOrdinario.TabIndex = 7;
+            this.rOrdinario.TabStop = true;
+            this.rOrdinario.Text = "Ordinario";
+            this.rOrdinario.UseVisualStyleBackColor = true;
+            this.rOrdinario.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // rUrgente
+            // 
+            this.rUrgente.AutoSize = true;
+            this.rUrgente.Location = new System.Drawing.Point(196, 45);
+            this.rUrgente.Name = "rUrgente";
+            this.rUrgente.Size = new System.Drawing.Size(92, 24);
+            this.rUrgente.TabIndex = 8;
+            this.rUrgente.TabStop = true;
+            this.rUrgente.Text = "Urgente";
+            this.rUrgente.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rUrgente);
+            this.groupBox1.Controls.Add(this.rOrdinario);
+            this.groupBox1.Location = new System.Drawing.Point(101, 317);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(327, 102);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(800, 663);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTelegrama);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,11 +139,13 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTelegrama;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.RadioButton rOrdinario;
+        private System.Windows.Forms.RadioButton rUrgente;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
